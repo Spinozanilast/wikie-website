@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "DepartureMono";
+  src: url("./assets/fonts/DepartureMono.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "PixelifySans";
+  src: url("./assets/fonts/PixelifySans.woff2") format("woff2");
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-contrast-background: var(--contrast-background);
+  --color-foreground: var(--foreground);
+  --color-secondary: var(--secondary);
+  --color-tertiary: var(--tertiary);
+
+  --radius-2xls: 14px;
+
+  --font-departuremono: "DepartureMono", sans-serif;
+  --font-pixelify: "PixelifySans", sans-serif;
+}
+
+@utility text-dm-* {
+  font-size: calc(11px * --value(number));
+}
+
+:root {
+  --background: #faf7d7;
+  --contrast-background: #332000;
+  --foreground: #21161a;
+  --secondary: #cf602b;
+  --tertiary: #f4ad39;
+
+  color-scheme: light dark;
+  color: var(--foreground);
+  background-color: var(--background);
+}
+
+.dark {
+  --background: #332000;
+  --contrast-background: #330500;
+  --foreground: #f0ffff;
+  --secondary: #007944;
+  --tertiary: #55bddc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
