@@ -2,6 +2,7 @@ import { Outlet, createRootRoute } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { TanStackDevtools } from "@tanstack/react-devtools";
 import { ThemeProvider } from "~components/theme/ThemeProvider";
+import { IconContext } from "@phosphor-icons/react";
 
 import "../styles.css";
 
@@ -13,7 +14,9 @@ function RootComponent() {
   return (
     <>
       <ThemeProvider defaultTheme="system" storageKey="theme">
-        <Outlet />
+        <IconContext value={{ weight: "duotone" }}>
+          <Outlet />
+        </IconContext>
       </ThemeProvider>
       <TanStackDevtools
         config={{

@@ -60,3 +60,36 @@ body,
 body {
   margin: 0;
 }
+
+@layer components {
+  .link {
+    @apply relative cursor-pointer text-tertiary p-1;
+
+    &:hover::after {
+      content: "↗";
+      @apply absolute -right-1 -top-1 text-dm-1 font-departuremono;
+    }
+  }
+}
+
+@layer utilities {
+  .centered-absolute {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.svg-path-animation {
+  stroke-dasharray: 15;
+  stroke-dashoffset: 0;
+
+  &:hover,
+  &:active {
+    stroke: var(--color-tertiary);
+    stroke: 1px;
+    stroke-dashoffset: 1000;
+    transition: stroke-dashoffset 60s linear;
+  }
+}

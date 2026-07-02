@@ -30,7 +30,7 @@ function ThemeToggle({ className }: { className?: string }) {
     <button
       onClick={() => toggle()}
       className={cn(
-        "border-tertiary hover:bg-secondary/20 cursor-pointer rounded-lg border-2 p-2 transition-colors",
+        "cursor-pointer rounded-lg border-2 border-tertiary p-2 transition-colors hover:bg-secondary/20",
         className,
       )}
       aria-label={`Switch to ${label} mode`}

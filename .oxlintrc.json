@@ -1,6 +1,12 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
   "plugins": ["import", "typescript"],
+  "jsPlugins": ["oxlint-tailwindcss"],
+  "settings": {
+    "tailwindcss": {
+      "entryPoint": "src/styles.css"
+    }
+  },
   "categories": {
     "correctness": "off"
   },
@@ -18,7 +24,16 @@
     "eslint.config.js",
     "prettier.config.js"
   ],
-  "rules": {},
+  "rules": {
+    "tailwindcss/no-unknown-classes": "allow",
+    "tailwindcss/no-duplicate-classes": "warn",
+    "tailwindcss/no-conflicting-classes": "warn",
+    "tailwindcss/no-deprecated-classes": "warn",
+    "tailwindcss/no-unnecessary-whitespace": "warn",
+    "tailwindcss/enforce-sort-order": "warn",
+    "tailwindcss/enforce-shorthand": "warn",
+    "tailwindcss/no-hardcoded-colors": "warn"
+  },
   "overrides": [
     {
       "files": ["**/*.{js,ts,tsx}"],

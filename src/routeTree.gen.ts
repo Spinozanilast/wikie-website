@@ -9,50 +9,50 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
+import { Route as WikieWebsiteRouteImport } from './routes/wikie-website'
 
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const WikieWebsiteRoute = WikieWebsiteRouteImport.update({
+  id: '/wikie-website',
+  path: '/wikie-website',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
+  '/wikie-website': typeof WikieWebsiteRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
+  '/wikie-website': typeof WikieWebsiteRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
+  '/wikie-website': typeof WikieWebsiteRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/wikie-website'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/wikie-website'
+  id: '__root__' | '/wikie-website'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
+  WikieWebsiteRoute: typeof WikieWebsiteRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/wikie-website': {
+      id: '/wikie-website'
+      path: '/wikie-website'
+      fullPath: '/wikie-website'
+      preLoaderRoute: typeof WikieWebsiteRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
+  WikieWebsiteRoute: WikieWebsiteRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
