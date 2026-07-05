@@ -16,6 +16,7 @@
       "~assets/*": ["./src/assets/*"],
       "~components/*": ["./src/components/*"],
       "~lib/*": ["./src/lib/*"],
+      "~features/*": ["./src/features/*"],
     },
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "types": ["vite/client"],

@@ -47,7 +47,28 @@ function Footer({ className }: { className?: string }) {
             </li>
           </ul>
         </div>
-        <LogoSvg className="w-15 justify-self-center" />
+        <div className="m-2 text-center text-balance">
+          <LogoSvg className="w-15 justify-self-center" />
+          <p className="text-xs">
+            thanks{" "}
+            <a
+              className="link text-tertiary"
+              href="https://getindie.wiki/"
+              target="_blank"
+            >
+              Indie Wiki Buddy
+            </a>{" "}
+            extension <b>community</b> from{" "}
+            <a
+              className="link text-tertiary"
+              href="https://kevin.payravi.dev/"
+              target="_blank"
+            >
+              Kevin Payravi
+            </a>{" "}
+            for <b>independent wiki data</b>
+          </p>
+        </div>
         <div className="flex flex-col items-center gap-1 sm:items-end">
           <a
             href="https://github.com/spinozanilast/wikie-website"
