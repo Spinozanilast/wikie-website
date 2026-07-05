@@ -29,7 +29,7 @@ function GithubLink({
 
   return (
     <a
-      className="link flex items-center gap-1"
+      className="link flex items-center gap-1 text-tertiary"
       href={`https://github.com/${repo}`}
       target="_blank"
       rel="noopener noreferrer"

@@ -3,7 +3,7 @@ import ThemeToggle from "~components/theme/ThemeToggle";
 import BannerImgUrl from "/banner.png";
 import WikisBannerImgUrl from "/wikis_banner.png";
 import LogoSvg from "~components/LogoSvg";
-import { PuzzlePieceIcon } from "@phosphor-icons/react";
+import { ListStarIcon, PuzzlePieceIcon } from "@phosphor-icons/react";
 import {
   SiGooglechrome,
   SiFirefoxbrowser,
@@ -13,9 +13,11 @@ import {
   SiSteamdb,
 } from "@icons-pack/react-simple-icons";
 import GithubLink from "~/components/GithubLink";
+import Footer from "~components/Footer";
 import FirstPosterSvg from "~assets/posters/first/poster.svg?react";
 import FirstPosterImgSrc from "~assets/posters/first/poster_reference.png";
-import Footer from "~components/Footer";
+import SecondPosterSvg from "~assets/posters/second/poster.svg?react";
+import SecondPosterImgSrc from "~assets/posters/second/poster_reference.png";
 
 function EdgeIcon({
   size = 24,
@@ -183,17 +185,54 @@ function Home() {
         </div>
       </section>
       <section
-        id="#features"
-        className="flex min-h-dvh max-w-full flex-col overflow-x-clip font-departuremono"
+        id="features"
+        className="mb-5 flex min-h-dvh max-w-full flex-col overflow-x-clip font-departuremono"
       >
-        <h1 className="w-full bg-secondary py-2 text-center text-dm-6 font-bold uppercase">
-          Features
+        <h1 className="sm-dm-4 flex w-full items-center justify-center gap-4 bg-secondary py-2 text-center text-dm-6 font-bold uppercase">
+          <ListStarIcon size={54} /> Features
         </h1>
         <div className="flex flex-1 flex-col">
           <div className="grid w-full grid-cols-2 grid-rows-1 items-center gap-2 p-4">
+            <div className="z-1 flex -rotate-3 flex-col gap-4">
+              <h1 className="bg-tertiary/60 p-2 text-center text-[clamp(1rem,5cqi,3rem)] uppercase">
+                <span className="font-bold italic">1.</span> Get possible wikis
+                links
+              </h1>
+              <ul className="flex flex-col gap-4 text-dm-2">
+                <li className="flex gap-2 text-justify align-super">
+                  <h2 className="text-tertiary">1*</h2>
+                  Here you can see name of the game you watching at the page
+                  now, founded <b>wikis count</b> and <b>wikipedia</b> with{" "}
+                  <b>steam/steamdb</b> links.
+                </li>
+                <li className="flex gap-2 text-justify align-super">
+                  <h2 className="text-tertiary">2*</h2>
+                  There are main wiki links (the <b>official one</b> and{" "}
+                  <b>origin one's</b>)
+                </li>
+                <li className="flex gap-2 text-justify align-super">
+                  <h2 className="text-tertiary">3*</h2>
+                  There are may be a lot of wikis for some <b>
+                    related games
+                  </b>{" "}
+                  (e.g. modded versions, fan-made wikis, etc.) with their
+                  origins.
+                </li>
+              </ul>
+            </div>
+            <div className="group relative z-0 w-full max-w-full rotate-4 place-items-center-safe overflow-hidden">
+              <SecondPosterSvg />
+              <img
+                src={SecondPosterImgSrc}
+                alt="Second Poster"
+                className="pointer-events-none absolute top-0 left-1/2 hidden -translate-x-1/2 group-hover:block"
+              />
+            </div>
+          </div>
+          <div className="grid w-full grid-cols-2 grid-rows-1 items-center gap-2 p-4">
             <div className="z-1 flex rotate-3 flex-col gap-4">
-              <h1 className="bg-secondary/80 p-2 text-center font-departuremono text-[clamp(1rem,5cqi,3rem)] uppercase">
-                <span className="font-bold italic">1.</span> Get the things you
+              <h1 className="bg-tertiary/60 p-2 text-center text-[clamp(1rem,5cqi,3rem)] uppercase">
+                <span className="font-bold italic">2.</span> Get the things you
                 may need now
               </h1>
               <p className="text-center text-dm-2">

@@ -57,13 +57,17 @@ body,
   height: 100%;
 }
 
+b {
+  display: contents;
+}
+
 body {
   margin: 0;
 }
 
 @layer components {
   .link {
-    @apply relative cursor-pointer text-tertiary p-1;
+    @apply relative cursor-pointer p-1;
 
     &:hover::after {
       content: "↗";
