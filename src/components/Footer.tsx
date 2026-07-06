@@ -2,6 +2,7 @@ import { cn } from "~lib/utils";
 import LogoSvg from "~components/LogoSvg";
 import {
   GithubLogoIcon,
+  HeartStraightIcon,
   HouseIcon,
   ListStarIcon,
   UserSquareIcon,
@@ -37,12 +38,12 @@ function Footer({ className }: { className?: string }) {
               </a>
             </li>
             <li>
-              <a href="#" className="group hover:text-tertiary/70">
+              <a href="#contacts" className="group hover:text-tertiary/70">
                 <UserSquareIcon
                   size={24}
                   className="mr-1 inline group-hover:scale-110"
                 />
-                Contact
+                Contacts
               </a>
             </li>
           </ul>
@@ -50,6 +51,7 @@ function Footer({ className }: { className?: string }) {
         <div className="m-2 text-center text-balance">
           <LogoSvg className="w-15 justify-self-center" />
           <p className="text-xs">
+            <HeartStraightIcon className="mb-1 inline text-red-700" size={16} />{" "}
             thanks{" "}
             <a
               className="link text-tertiary"
@@ -69,7 +71,7 @@ function Footer({ className }: { className?: string }) {
             for <b>independent wiki data</b>
           </p>
         </div>
-        <div className="flex flex-col items-center gap-1 sm:items-end">
+        <div className="flex flex-col items-center justify-center gap-1 place-self-center sm:items-end">
           <a
             href="https://github.com/spinozanilast/wikie-website"
             className="link hover:text-tertiary/70"
@@ -77,7 +79,16 @@ function Footer({ className }: { className?: string }) {
             <GithubLogoIcon className="inline" size={24} />
             Source
           </a>
-          <h1 className="font-bold">(C) 2026 Spinozanilast</h1>
+          <h1 className="text-right font-bold">
+            (C) 2026{" "}
+            <a
+              className="link text-tertiary"
+              href="https://spinozanilast.vercel.app"
+              target="_blank"
+            >
+              Spinozanilast
+            </a>
+          </h1>
         </div>
       </div>
     </footer>

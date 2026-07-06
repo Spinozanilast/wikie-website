@@ -17,6 +17,8 @@ const config = defineConfig({
     viteReact(),
     svgr(),
   ],
+  css: { devSourcemap: true },
+  build: { sourcemap: true },
 });
 
 export default config;

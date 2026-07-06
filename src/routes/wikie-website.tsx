@@ -3,7 +3,16 @@ import ThemeToggle from "~components/theme/ThemeToggle";
 import BannerImgUrl from "/banner.png";
 import WikisBannerImgUrl from "/wikis_banner.png";
 import LogoSvg from "~components/LogoSvg";
-import { ListStarIcon, PuzzlePieceIcon } from "@phosphor-icons/react";
+import {
+  AtIcon,
+  ChecksIcon,
+  GithubLogoIcon,
+  ListStarIcon,
+  PathIcon,
+  PuzzlePieceIcon,
+  TelegramLogoIcon,
+  UserSquareIcon,
+} from "@phosphor-icons/react";
 import {
   SiGooglechrome,
   SiFirefoxbrowser,
@@ -11,15 +20,24 @@ import {
   SiFirefoxbrowserHex,
   SiSteam,
   SiSteamdb,
+  SiTelegramHex,
+  SiGmailHex,
+  SiGithubHex,
 } from "@icons-pack/react-simple-icons";
 import GithubLink from "~/components/GithubLink";
 import Footer from "~components/Footer";
+
 import FirstPosterSvg from "~assets/posters/first/poster.svg?react";
 import FirstPosterImgSrc from "~assets/posters/first/poster_reference.png";
 import SecondPosterSvg from "~assets/posters/second/poster.svg?react";
 import SecondPosterImgSrc from "~assets/posters/second/poster_reference.png";
+import ThirdPosterSvg from "~assets/posters/third/poster.svg?react";
+import ThirdPosterImgSrc from "~assets/posters/third/poster_reference.png";
+
 import TitledSection from "~features/home/TitledSection";
 import FeatureContent from "~features/home/FeatureContent";
+import Contact from "~features/home/Contact";
+import RoadmapTodo from "~features/home/RoadmapTodo";
 
 function EdgeIcon({
   size = 24,
@@ -188,7 +206,7 @@ function Home() {
       </section>
       <TitledSection
         id="features"
-        className="mt-5"
+        classNames={{ container: "mt-5" }}
         icon={ListStarIcon}
         title="Features"
       >
@@ -227,18 +245,18 @@ function Home() {
               />
             </>
           }
+          rotations={{ description: -3, imageArea: 3 }}
         />
         <FeatureContent
-          number={2}
-          name="Get the things you may need now"
+          number={2.1}
+          name="Get the things you may need now in corners"
           descripton={
             <div>
-              All the time you go to <SiSteam className="inline" size={32} /> or{" "}
+              This is default <b>display mode</b>. All the time you go to{" "}
+              <SiSteam className="inline" size={32} /> or{" "}
               <SiSteamdb className="inline" size={32} /> <i>(for now)</i> sites,
               you will see the panel on the left bottom corner{" "}
-              <i>
-                (you could also change the corner and <b>display mode</b>)
-              </i>
+              <i>(you could also change the corner)</i>
             </div>
           }
           imageArea={
@@ -251,7 +269,99 @@ function Home() {
               />
             </>
           }
+          rotations={{
+            description: 2,
+            imageArea: -2,
+          }}
         />
+        <FeatureContent
+          number={2.2}
+          name="Get the things you may need now"
+          descripton={
+            <div>
+              <i>
+                This is an alternative <b>display mode</b>. In{" "}
+                <SiSteamdb className="inline" size={32} /> you can find wikis in
+                links line, in <SiSteam className="inline" size={32} /> you can
+                find wikis under the game name.
+              </i>
+            </div>
+          }
+          imageArea={
+            <>
+              <ThirdPosterSvg />
+              <img
+                src={ThirdPosterImgSrc}
+                alt="Third Poster"
+                className="sise-full pointer-events-none absolute top-0 left-1/2 hidden -translate-x-1/2 group-hover:block"
+              />
+            </>
+          }
+          rotations={{
+            imageArea: -3,
+            description: 3,
+          }}
+        />
+      </TitledSection>
+      <TitledSection
+        title="Roadmap"
+        id="roadmap"
+        icon={PathIcon}
+        classNames={{
+          container: "flex w-full items-center justify-center mt-4",
+        }}
+      >
+        <div className="flex size-full flex-1 grid-cols-2 flex-col gap-2 px-3 md:grid">
+          <div>
+            <TitledSection
+              title="Plans"
+              id=""
+              classNames={{ title: "bg-tertiary/80" }}
+            >
+              roadmap
+            </TitledSection>
+          </div>
+          <div>
+            <TitledSection
+              title="Todo"
+              id=""
+              icon={ChecksIcon}
+              classNames={{ title: "bg-tertiary/80" }}
+            >
+              <RoadmapTodo />
+            </TitledSection>
+          </div>
+        </div>
+      </TitledSection>
+      <TitledSection
+        title="Contacts"
+        id="contacts"
+        icon={UserSquareIcon}
+        classNames={{
+          section: "min-h-fit",
+          container: "flex w-full items-center justify-center mt-4",
+        }}
+      >
+        <div className="flex flex-wrap items-center justify-center gap-4">
+          <Contact
+            href={"https://t.me/spinozanilast"}
+            text={"@spinozanilast"}
+            icon={TelegramLogoIcon}
+            backgroundColor={`${SiTelegramHex}`}
+          />
+          <Contact
+            href={"mailto:spinozanilast@gmail.com"}
+            text={"spinozanilast@gmail.com"}
+            icon={AtIcon}
+            backgroundColor={`${SiGmailHex}`}
+          />
+          <Contact
+            href={"https://github.com/spinozanilast"}
+            text={"spinozanilast"}
+            icon={GithubLogoIcon}
+            backgroundColor={`${SiGithubHex}90`}
+          />
+        </div>
       </TitledSection>
       <Footer />
     </>

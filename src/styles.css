@@ -69,6 +69,11 @@ body {
   .link {
     @apply relative cursor-pointer p-1;
 
+    &.xl:hover::after {
+      content: "↗";
+      @apply absolute -right-5 -top-5 font-departuremono text-dm-3;
+    }
+
     &:hover::after {
       content: "↗";
       @apply absolute -right-1 -top-1 text-dm-1 font-departuremono;
