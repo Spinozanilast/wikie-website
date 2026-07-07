@@ -1,7 +1,11 @@
 import { createRouter as createTanStackRouter } from "@tanstack/react-router";
+import { NotFound } from "~components/NotFound";
 import { routeTree } from "./routeTree.gen";
 
-const basepath = import.meta.env.BASE_URL === "/" ? undefined : import.meta.env.BASE_URL.replace(/\/$/, "");
+const basepath =
+  import.meta.env.BASE_URL === "/"
+    ? undefined
+    : import.meta.env.BASE_URL.replace(/\/$/, "");
 
 export function getRouter() {
   const router = createTanStackRouter({
@@ -10,6 +14,7 @@ export function getRouter() {
     defaultPreload: "intent",
     defaultPreloadStaleTime: 0,
     basepath,
+    defaultNotFoundComponent: () => <NotFound />,
   });
 
   return router;
