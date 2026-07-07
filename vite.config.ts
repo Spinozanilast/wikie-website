@@ -18,6 +18,18 @@ const config = defineConfig({
     tanstackRouter({ target: "react", autoCodeSplitting: true }),
     viteReact(),
     svgr(),
+    {
+      name: "generate-404",
+      async closeBundle() {
+        const { copyFileSync, existsSync } = await import("node:fs");
+        const { resolve } = await import("node:path");
+        const src = resolve("dist", "index.html");
+        const dest = resolve("dist", "404.html");
+        if (existsSync(src)) {
+          copyFileSync(src, dest);
+        }
+      },
+    },
   ],
 });
 
