@@ -5,8 +5,17 @@ import {
   HeartStraightIcon,
   HouseIcon,
   ListStarIcon,
+  PathIcon,
   UserSquareIcon,
 } from "@phosphor-icons/react";
+import type { Icon } from "@phosphor-icons/react";
+
+const FooterLinks: { title: string; href: string; icon: Icon }[] = [
+  { title: "Home", href: "#", icon: HouseIcon },
+  { title: "Features", href: "#features", icon: ListStarIcon },
+  { title: "Roadmap", href: "#roadmap", icon: PathIcon },
+  { title: "Contacts", href: "#contacts", icon: UserSquareIcon },
+];
 
 function Footer({ className }: { className?: string }) {
   return (
@@ -19,33 +28,20 @@ function Footer({ className }: { className?: string }) {
       <div className="flex w-fit grid-cols-[1fr_1fr_1fr] flex-col gap-2 sm:grid">
         <div className="h-full">
           <ul className="mx-auto flex h-full flex-col items-center justify-center gap-2 text-right text-sm sm:mx-0 sm:flex-row">
-            <li>
-              <a href="#" className="group hover:text-tertiary/70">
-                <HouseIcon
-                  size={24}
-                  className="mr-1 inline group-hover:scale-110"
-                />
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#features" className="group hover:text-tertiary/70">
-                <ListStarIcon
-                  size={24}
-                  className="mr-1 inline group-hover:scale-110"
-                />
-                Features
-              </a>
-            </li>
-            <li>
-              <a href="#contacts" className="group hover:text-tertiary/70">
-                <UserSquareIcon
-                  size={24}
-                  className="mr-1 inline group-hover:scale-110"
-                />
-                Contacts
-              </a>
-            </li>
+            {FooterLinks.map((link) => (
+              <li key={link.title}>
+                <a
+                  href={link.href}
+                  className="group flex flex-col items-center justify-center hover:text-tertiary/70 lg:flex-row"
+                >
+                  <link.icon
+                    size={24}
+                    className="mr-1 inline group-hover:scale-110"
+                  />
+                  {link.title}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
         <div className="m-2 text-center text-balance">
@@ -70,9 +66,13 @@ function Footer({ className }: { className?: string }) {
             </a>{" "}
             for <b>independent wiki data</b>
           </p>
+          <p className="mt-2 hidden border-t-2 border-dashed border-tertiary/50 pt-2 text-xs text-balance italic md:block">
+            * extension or this site are not affiliated with steam or any other
+            organization
+          </p>
         </div>
         <div className="flex flex-col items-center justify-center gap-1 place-self-center sm:items-end">
-          <div>
+          <div className="text-right">
             <GithubLogoIcon className="inline" size={24} />
             <a
               href="https://github.com/spinozanilast/wikie"
@@ -100,6 +100,10 @@ function Footer({ className }: { className?: string }) {
               Spinozanilast
             </a>
           </h1>
+          <p className="mt-2 block border-t-2 border-dashed border-tertiary/50 pt-2 text-center text-xs text-balance italic md:hidden">
+            * extension or this site are not affiliated with steam or any other
+            organization
+          </p>
         </div>
       </div>
     </footer>

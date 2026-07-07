@@ -16,7 +16,7 @@ function Contact(props: ContactProps) {
       rel="noopener noreferrer"
     >
       <div
-        className="flex flex-col items-center rounded-md p-4 text-dm-2"
+        className="flex flex-col items-center rounded-md p-4 text-dm-1.5 md:text-dm-2"
         style={{
           backgroundColor: props.backgroundColor,
         }}
