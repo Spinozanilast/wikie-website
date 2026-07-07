@@ -7,9 +7,11 @@ import viteReact from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import svgr from "vite-plugin-svgr";
 
+const base = process.env.VERCEL ? undefined : "/wikie-website/";
+
 const config = defineConfig({
   resolve: { tsconfigPaths: true },
-  base: "/wikie-website/",
+  base,
   plugins: [
     devtools(),
     tailwindcss(),
@@ -17,8 +19,6 @@ const config = defineConfig({
     viteReact(),
     svgr(),
   ],
-  css: { devSourcemap: true },
-  build: { sourcemap: true },
 });
 
 export default config;
