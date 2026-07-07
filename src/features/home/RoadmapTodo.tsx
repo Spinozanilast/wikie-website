@@ -15,7 +15,6 @@ type TodoItem = {
 function parseTodoItems(markdown: string): TodoItem[] {
   const lines =
     markdown.split(/todo\n([\S\s]+?)(?:$(?![\r\n])|#)/im)[1]?.split("\n") ?? [];
-  console.log(lines);
   const entries: { text: string; checked: boolean; level: number }[] = [];
 
   for (const line of lines) {

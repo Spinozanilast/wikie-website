@@ -1,11 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import ThemeToggle from "~components/theme/ThemeToggle";
-import BannerImgUrl from "/banner.png";
-import WikisBannerImgUrl from "/wikis_banner.png";
-import LogoSvg from "~components/LogoSvg";
 import {
   AtIcon,
-  ChecksIcon,
   GithubLogoIcon,
   ListStarIcon,
   PathIcon,
@@ -24,20 +19,25 @@ import {
   SiGmailHex,
   SiGithubHex,
 } from "@icons-pack/react-simple-icons";
-import GithubLink from "~/components/GithubLink";
-import Footer from "~components/Footer";
 
+import BannerImgUrl from "/banner.png";
+import WikisBannerImgUrl from "/wikis_banner.png";
 import FirstPosterSvg from "~assets/posters/first/poster.svg?react";
 import FirstPosterImgSrc from "~assets/posters/first/poster_reference.png";
 import SecondPosterSvg from "~assets/posters/second/poster.svg?react";
-import SecondPosterImgSrc from "~assets/posters/second/poster_reference.png";
+import SecondPosterSvgReference from "~assets/posters/second/poster_reference.svg?react";
 import ThirdPosterSvg from "~assets/posters/third/poster.svg?react";
 import ThirdPosterImgSrc from "~assets/posters/third/poster_reference.png";
 
 import TitledSection from "~features/home/TitledSection";
 import FeatureContent from "~features/home/FeatureContent";
 import Contact from "~features/home/Contact";
-import RoadmapTodo from "~features/home/RoadmapTodo";
+import Roadmap from "~features/home/Roadmap";
+
+import GithubLink from "~/components/GithubLink";
+import Footer from "~components/Footer";
+import ThemeToggle from "~components/theme/ThemeToggle";
+import LogoSvg from "~components/LogoSvg";
 
 function EdgeIcon({
   size = 24,
@@ -238,11 +238,9 @@ function Home() {
           imageArea={
             <>
               <SecondPosterSvg />
-              <img
-                src={SecondPosterImgSrc}
-                alt="Second Poster"
-                className="pointer-events-none absolute top-0 left-1/2 hidden -translate-x-1/2 group-hover:block"
-              />
+              <div className="max-w-1/2">
+                <SecondPosterSvgReference className="pointer-events-none absolute top-0 left-1/2 hidden w-full -translate-x-1/2 group-hover:block" />
+              </div>
             </>
           }
           rotations={{ description: -3, imageArea: 3 }}
@@ -265,7 +263,7 @@ function Home() {
               <img
                 src={FirstPosterImgSrc}
                 alt="First Poster"
-                className="pointer-events-none absolute top-0 left-0 hidden size-full group-hover:block"
+                className="pointer-events-none absolute top-0 left-0 hidden w-full group-hover:block"
               />
             </>
           }
@@ -293,7 +291,7 @@ function Home() {
               <img
                 src={ThirdPosterImgSrc}
                 alt="Third Poster"
-                className="sise-full pointer-events-none absolute top-0 left-1/2 hidden -translate-x-1/2 group-hover:block"
+                className="pointer-events-none absolute top-0 left-1/2 hidden w-full -translate-x-1/2 group-hover:block"
               />
             </>
           }
@@ -311,27 +309,7 @@ function Home() {
           container: "flex w-full items-center justify-center mt-4",
         }}
       >
-        <div className="flex size-full flex-1 grid-cols-2 flex-col gap-2 px-3 md:grid">
-          <div>
-            <TitledSection
-              title="Plans"
-              id=""
-              classNames={{ title: "bg-tertiary/80" }}
-            >
-              roadmap
-            </TitledSection>
-          </div>
-          <div>
-            <TitledSection
-              title="Todo"
-              id=""
-              icon={ChecksIcon}
-              classNames={{ title: "bg-tertiary/80" }}
-            >
-              <RoadmapTodo />
-            </TitledSection>
-          </div>
-        </div>
+        <Roadmap />
       </TitledSection>
       <TitledSection
         title="Contacts"

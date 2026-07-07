@@ -54,7 +54,7 @@ function Footer({ className }: { className?: string }) {
             <HeartStraightIcon className="mb-1 inline text-red-700" size={16} />{" "}
             thanks{" "}
             <a
-              className="link text-tertiary"
+              className="link whitespace-nowrap text-tertiary"
               href="https://getindie.wiki/"
               target="_blank"
             >
@@ -62,7 +62,7 @@ function Footer({ className }: { className?: string }) {
             </a>{" "}
             extension <b>community</b> from{" "}
             <a
-              className="link text-tertiary"
+              className="link whitespace-nowrap text-tertiary"
               href="https://kevin.payravi.dev/"
               target="_blank"
             >
@@ -72,13 +72,24 @@ function Footer({ className }: { className?: string }) {
           </p>
         </div>
         <div className="flex flex-col items-center justify-center gap-1 place-self-center sm:items-end">
-          <a
-            href="https://github.com/spinozanilast/wikie-website"
-            className="link hover:text-tertiary/70"
-          >
+          <div>
             <GithubLogoIcon className="inline" size={24} />
-            Source
-          </a>
+            <a
+              href="https://github.com/spinozanilast/wikie"
+              className="link hover:text-tertiary/70"
+              target="_blank"
+            >
+              Source
+            </a>
+            /
+            <a
+              href="https://github.com/spinozanilast/wikie-website"
+              className="link hover:text-tertiary/70"
+              target="_blank"
+            >
+              Website Source
+            </a>
+          </div>
           <h1 className="text-right font-bold">
             (C) 2026{" "}
             <a
