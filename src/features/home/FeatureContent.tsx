@@ -11,6 +11,7 @@ type FeatureContentProps = {
     description?: number;
     imageArea?: number;
   };
+  placeSeparatorAfter?: boolean;
 };
 
 function FeatureContent({
@@ -18,6 +19,7 @@ function FeatureContent({
     description: descriptionRotation = 0,
     imageArea: imageAreaRotation = 0,
   } = {},
+  placeSeparatorAfter = false,
   ...props
 }: FeatureContentProps) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -42,6 +44,7 @@ function FeatureContent({
   }, [isMobile, containerRef]);
 
   return (
+    <>
     <div
       className="grid w-full grid-cols-2 grid-rows-1 items-center gap-2 p-4"
       ref={containerRef}
@@ -61,7 +64,15 @@ function FeatureContent({
       >
         {props.imageArea}
       </div>
-    </div>
+      </div>
+      {placeSeparatorAfter && (
+          // oxlint-disable-next-line tailwindcss/no-conflicting-classes
+          <div className="my-6 w-full self-center-safe overflow-hidden bg-contrast-background py-2 text-center text-xl text-dm-2 font-bold tracking-[-0.12em] text-background select-none">
+          ⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒⁒
+          </div >
+        )
+      }
+    </>
   );
 }
 
